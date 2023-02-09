@@ -1,0 +1,63 @@
+.search-panel {
+  padding: 24px;
+  padding-right: 42px;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.2s !important;
+  white-space: nowrap;
+
+  &--collapsed {
+    width: 20px;
+    padding: 0;
+
+    & > * {
+      visibility: hidden;
+    }
+  }
+
+  &__toggler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background-color: rgba($color: lightgrey, $alpha: 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    visibility: visible !important;
+
+    &:hover {
+      background-color: rgba($color: lightgrey, $alpha: 0.4);
+    }
+
+    & > * {
+      color: rgba($color: black, $alpha: 0.5);
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    margin-bottom: 20px !important;
+    display: block;
+  }
+
+  &__buttons {
+    & > *:first-child {
+      margin-right: 16px;
+    }
+  }
+}

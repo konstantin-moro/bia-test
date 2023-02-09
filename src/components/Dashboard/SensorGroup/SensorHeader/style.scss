@@ -1,0 +1,40 @@
+.sensor-header {
+  width: 300px;
+  margin-bottom: 24px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__name {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__average {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__spinner-container {
+    position: relative;
+    // margin-bottom: 8px;
+  }
+
+  &__spinner-value {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__spinner-label {
+    font-size: 10px;
+    color: rgba($color: #000000, $alpha: 0.7);
+  }
+}

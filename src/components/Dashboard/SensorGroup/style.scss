@@ -1,0 +1,12 @@
+.sensor-values {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
+
+  &__table-container {
+    overflow: auto;
+    width: 100%;
+  }
+}
