@@ -8,7 +8,7 @@ import { TimeSeriesContext } from './store';
 import Dashboard from './components/Dashboard';
 
 import { fetchTimeSeries } from './shared/api';
-import { INITIAL_END_DATE, INITIAL_FACILITY_ID } from './shared/constant';
+import { INITIAL_END_DATE, INITIAL_FACILITY_ID, INITIAL_START_DATE } from './shared/constant';
 
 const App = (): ReactElement => {
   const [timeSeries, setTimeSeries] = useState<TimeSeriesBySensor[]>([]);
@@ -16,7 +16,7 @@ const App = (): ReactElement => {
   const providerValue = { timeSeries, setTimeSeries };
 
   useEffect(() => {
-    setTimeSeries(fetchTimeSeries(INITIAL_END_DATE, INITIAL_END_DATE, INITIAL_FACILITY_ID));
+    setTimeSeries(fetchTimeSeries(INITIAL_START_DATE, INITIAL_END_DATE, INITIAL_FACILITY_ID));
   }, []);
 
   return (

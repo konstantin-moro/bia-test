@@ -23,10 +23,10 @@ export function generateTimeSeries(startDate: Date, endDate: Date, facilityId: n
     });
 }
 
-export function formatTimeSeries(series: TimeSeriesResponse[]): TimeSeriesBySensor[] {
+export function formatTimeSeriesResponse(series: TimeSeriesResponse[]): TimeSeriesBySensor[] {
   const timeSeriesBySensor: TimeSeriesBySensor[] = [];
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
+  /* eslint-disable @typescript-eslint/naming-convention */
   series.forEach(({ facility_id, sensor_name, timestamp, value }: TimeSeriesResponse) => {
     const sensorIndex = timeSeriesBySensor.findIndex(({ name }: TimeSeriesBySensor) => name === sensor_name);
     const timeSeriesValue = { timestamp, value };
@@ -39,8 +39,9 @@ export function formatTimeSeries(series: TimeSeriesResponse[]): TimeSeriesBySens
 
     timeSeriesBySensor[sensorIndex].values.push(timeSeriesValue);
   });
+  /* eslint-enable @typescript-eslint/naming-convention */
 
-  return timeSeriesBySensor;
+  return timeSeriesBySensor.sort((a: TimeSeriesBySensor, b: TimeSeriesBySensor) => a.name.localeCompare(b.name));
 }
 
 function randomIntFromInterval(min: number, max: number): number {
